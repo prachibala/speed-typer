@@ -35,8 +35,7 @@ const typeController = (e) => {
 
     // if it is not a valid character like Control/Alt then skip displaying anything
     if (!validLetters.includes(newLetter)) {
-        errorCount++;
-        return errorCount;
+        return;
     }
 
     userText += newLetter;
@@ -51,6 +50,7 @@ const typeController = (e) => {
         display.innerHTML += `<span class="red">${
             newLetter === " " ? "▪" : newLetter
         }</span>`;
+        errorCount++;
     }
 
     // check if given question text is equal to user typed text
